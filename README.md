@@ -1,6 +1,6 @@
 # Data science internship 
 
-- Mission : come up with a short-term prediction model of bitcoin price 
+- Mission : come up with a solution for Bitcoin address identity inference
 - Team : Yassine Abouhadid & Othmane Akhsas
 - Start day : June 29th 
 
