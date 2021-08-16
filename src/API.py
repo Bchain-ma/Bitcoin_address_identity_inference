@@ -3,9 +3,11 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 from numpy.core.defchararray import add
 import pandas as pd
+from flask_cors import CORS
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='../webpage/app/build')
+CORS(app)
 model = pickle.load(open('src/RandomForest.pkl', 'rb'))
 dataset = pd.read_csv("datasets/BitcoinHeistData.csv")
 
