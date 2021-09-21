@@ -12,8 +12,8 @@ function App() {
 
   const submit = () => {
     if (address){
-axios.post('http://127.0.0.1:5000/predict', address).then(response => {
-      console.log("SUCCESS", response)
+axios.post('/predict', address).then(response => {
+      console.log("SUCCESS 1", response)
       if (response.data == 0) {
         setresult("This address is licit")
       } else if (response.data == 1){
@@ -21,12 +21,34 @@ axios.post('http://127.0.0.1:5000/predict', address).then(response => {
       }
       console.log(response.data)
     }).catch(error => {
-      setresult(error.toString())
+      setresult("error 1 :", error.toString())
     })
-    }
-    
-  }
 
+    axios.post('http://api:5000/predict', address).then(response => {
+      console.log("SUCCESS 2", response)
+      if (response.data == 0) {
+        setresult("This address is licit")
+      } else if (response.data == 1){
+        setresult("This address is illicit")
+      }
+      console.log(response.data)
+    }).catch(error => {
+      setresult("error 2 :", error.toString())
+    })
+
+    axios.post('http://0.0.0.0:5000/predict', address).then(response => {
+      console.log("SUCCESS 3", response)
+      if (response.data == 0) {
+        setresult("This address is licit")
+      } else if (response.data == 1){
+        setresult("This address is illicit")
+      }
+      console.log(response.data)
+    }).catch(error => {
+      setresult("error 3 :", error.toString())
+    })
+  }
+}
   return (
     <div className="App">
       

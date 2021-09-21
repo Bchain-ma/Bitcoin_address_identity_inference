@@ -1,0 +1,19 @@
+  
+version: "3.9"
+services:
+  api:
+    build:  ./api
+    ports: 
+    - "5000:5000"
+    volumes: 
+    - ./api:/app
+    environment: 
+      FLASK_ENV: development
+  client:
+    build: ./webpage/app
+    ports: 
+      - "3000:3000"
+    volumes: 
+      - ./webpage/app:/user/src/app
+    depends_on: 
+      - api

@@ -1,0 +1,10 @@
+entrypoints==0.3
+Flask==2.0.1
+Flask-Cors
+flask-restx
+numpy==1.17.0
+pandas==1.1.5
+pickleshare==0.7.5
+pip==21.1.3
+gunicorn==20.0.4
+sklearn
